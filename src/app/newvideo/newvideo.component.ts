@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { YoutubePlayerModule } from 'ng2-youtube-player';
 import {video, question, answer} from '../models';
 import { AppServices } from '../services/services';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-newvideo',
@@ -27,7 +28,7 @@ export class NewvideoComponent implements OnInit {
   private newanswer:answer;
  
 
-  constructor(private appServices: AppServices) {
+  constructor(private appServices: AppServices, private router: Router) {
       this.myvid = new video();
       this.myvid.questions = new Array();
       this.myvid.thumbnail="";
@@ -105,6 +106,9 @@ submitVideo(){
             .subscribe(data => {
               console.log(data);   
           },error => console.log(error));
+
+      this.router.navigate(["videos"]);
+
 
       }
     ,error => console.log(error));
