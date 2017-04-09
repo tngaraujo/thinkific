@@ -32,6 +32,9 @@ The following requirements were met:
 ## Technology used
 Angular2, Express, NodeJS, SQLite3
 
+## Next steps
+Add remove and edit functions.
+
 ## Running
 Install dependencies: `npm install`.
 Run `ng serve` and navigate to `http://localhost:4200/`.
