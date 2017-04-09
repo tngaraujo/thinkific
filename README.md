@@ -5,6 +5,8 @@ It is a interactive video Manager which allows to create questions and answers t
 Multiple videos may be added with their questions at specific required times.
 Please also download the Back-end for this project (https://github.com/tngaraujo/thinkific-backend) which should be running in the same machine.
 
+Demo video: https://youtu.be/1rWixU8yzKs
+
 The following requirements were met:
 
 1. Should work with videos that are hosted on a site like Wistia or Youtube
