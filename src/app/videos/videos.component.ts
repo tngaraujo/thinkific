@@ -14,23 +14,23 @@ export class VideosComponent implements OnInit {
   videolist:video[];
   private htmlcode:string;
 
-  constructor(private appServices: AppServices) {
+
+
+  constructor(private appServices: AppServices,) {
 
     this.videolist = new Array();  
 
   }
 
-  ngOnInit() {
-
-    this.appServices.getVideoList()
+ngOnInit() {
+  this.videolist = new Array();
+      this.appServices.getVideoList()
     .subscribe(data => {
       for (var i=0; i < data.videos.length; i++){
         this.videolist.push(JSON.parse(data.videos[i]));
       }
-
-      }
+            }
     ,error => console.log(error));
-
 
   }
 
