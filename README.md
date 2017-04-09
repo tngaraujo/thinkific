@@ -1,31 +1,31 @@
 # Thinkific
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
+This project was developed for Vanhackthon (Apr 2017) - Thinkific Challenge (Choose your own Adventure Video Maker).
+It is a interactive video Manager which allows to create questions and answers to be displayed on top of a Youtube videos.
+Multiple videos may be added with their questions at specific required times.
+Please also download the Back-end for this project.
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The following requirements were met:
 
-## Code scaffolding
+1. Should work with videos that are hosted on a site like Wistia or Youtube
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+2. Should allow creators to prompt viewers with a question
 
-## Build
+3. Prompt should be possible at any video time specified by the creator (etc. 2min 30s of a
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+6 minute video)
 
-## Running unit tests
+4. Prompt should allow space for a question, and between 2 and 6 text responses
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+5. For each response, the behavior can be to resume playback, or link to another URL
 
-## Running end-to-end tests
+6. Prompt and responses overlaid on video.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+7. The interactive video link can be embedded into another page using HTML and a simple
 
-## Deploying to Github Pages
+## Technology used
+Angular2, Express, NodeJS, SQLite3
 
-Run `ng github-pages:deploy` to deploy to Github Pages.
-
-## Further help
-
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Running
+Simply run `ng serve` and navigate to `http://localhost:4200/`.
+The back-end should be running in the same machine (please download at ).
