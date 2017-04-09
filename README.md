@@ -3,7 +3,7 @@
 This project was developed for Vanhackthon (Apr 2017) - Thinkific Challenge (Choose your own Adventure Video Maker).
 It is a interactive video Manager which allows to create questions and answers to be displayed on top of a Youtube videos.
 Multiple videos may be added with their questions at specific required times.
-Please also download the Back-end for this project.
+Please also download the Back-end for this project (https://github.com/tngaraujo/thinkific-backend) which should be running in the same machine.
 
 The following requirements were met:
 
@@ -28,4 +28,4 @@ Angular2, Express, NodeJS, SQLite3
 
 ## Running
 Simply run `ng serve` and navigate to `http://localhost:4200/`.
-The back-end should be running in the same machine (please download at ).
+The back-end should be running in the same machine (please download at https://github.com/tngaraujo/thinkific-backend).
