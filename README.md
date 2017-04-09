@@ -31,6 +31,6 @@ The following requirements were met:
 Angular2, Express, NodeJS, SQLite3
 
 ## Running
-Install dependencies: `npm install`
+Install dependencies: `npm install` and run `npm i @types/youtube`.
 Run `ng serve` and navigate to `http://localhost:4200/`.
 The back-end should be running in the same machine (please download at https://github.com/tngaraujo/thinkific-backend).
