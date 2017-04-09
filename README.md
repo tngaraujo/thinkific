@@ -27,5 +27,6 @@ The following requirements were met:
 Angular2, Express, NodeJS, SQLite3
 
 ## Running
-Simply run `ng serve` and navigate to `http://localhost:4200/`.
+Install dependencies: `npm install`
+Run `ng serve` and navigate to `http://localhost:4200/`.
 The back-end should be running in the same machine (please download at https://github.com/tngaraujo/thinkific-backend).
