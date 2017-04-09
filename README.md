@@ -1,6 +1,4 @@
-# Thinkific Back-end
-
-This is the back-end for project https://github.com/tngaraujo/thinkific. The back-end runs on port 3000 and supports the application.
+# Thinkific
 
 This project was developed for Vanhackthon (Apr 2017) - Thinkific Challenge (Choose your own Adventure Video Maker).
 It is a interactive video Manager which allows to create questions and answers to be displayed on top of a Youtube videos.
