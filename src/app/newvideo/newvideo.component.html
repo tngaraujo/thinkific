@@ -1,0 +1,117 @@
+<div class="row" style="padding:8px;">
+  <div class="col-md-12" >
+        <a href="/videos" class="btn btn-default btn-raised">Back to Videos list</a>
+  </div>
+</div>
+<div class="row" style="padding-top:5px;">
+  <div class="col-md-5" style="padding-left:25px;">
+
+
+
+
+
+
+
+         <div class="well" style="padding-top:10px;background-color:#ffffff;"> 
+                  
+                  <h3>Add new Video</h3>
+                  
+
+                    Youtube URL:<br>
+                    <input type="text" [(ngModel)]="myvid.url" name="youtubeURL" style="width:300px"><br>
+                    <button type="button" class="btn btn-primary btn-raised" (click)="loadvideo();">Load video</button>
+                    <br>
+                    <button type="button" class="btn btn-success btn-raised" (click)="playVideo();">Play</button>
+                  <button type="button" class="btn btn-danger btn-raised" (click)="pauseVideo();">Pause</button>
+                    <br>
+
+
+
+          <br>Questions:<br><button type="button" class="btn btn-success btn-raised" (click)="addAction();">Add question at current time</button>
+          <p *ngIf="myvid.questions.length == 0"><br>No questions yet, click "Add question" to add the first one.<br></p>
+
+
+<div class="panel panel-default" *ngFor="let question of myvid.questions">
+  <div class="panel-body">
+
+
+
+          <!-- <div class="well" *ngFor="let question of myvid.questions"> -->
+              <b>Question</b>  {{question.question}}
+          <br><b>At time:</b> {{question.time | number : '1.2-2' }} seconds<br>
+            <b>Options</b>
+
+                      <ul> 
+                          <li *ngFor="let answer of question.answers">{{answer.text}} <span *ngIf="answer.correct == true" style="color:green;">(right answer)</span></li>
+                    </ul>
+
+              <!--<button type="button" class="btn btn-danger pull-right btn-raised" (click)="removeAnswer();">Remove</button>-->
+              <br>
+              <br>
+
+
+                </div>
+</div>
+          <!-- </div> -->
+
+
+
+
+              <!--<button type="button" class="btn btn-primary btn-raised" (click)="submitVideo();">Get HTML code</button>-->
+              <button type="button" class="btn btn-primary btn-raised" (click)="submitVideo();">Submit Video</button>
+
+
+        </div>
+  </div>
+
+<div class="col-md-7">
+
+
+
+
+        <div id="container">
+          <div id="navi"><youtube-player height="400px" width="600px"[videoId]="id" (ready)="savePlayer($event)" (change)="onStateChange($event)"></youtube-player></div>
+            <div *ngIf="videooverlayOn" id="infoi" style="height:400px;width:600px;color:#ffffff; background-color:#000000;opacity:0.85;padding:20px;font-size:18;">
+                <h3>Add a question at {{myvid.time | number : '1.2-2' }} seconds</h3>
+                <div class="row">
+                  <div class="col-md-6">
+                      <h4>Question</h4>
+                      <input style="color:#000000;" type="textarea" [(ngModel)]="newQuestion.question" >
+                      <br><br>
+                      <b>Answer Options</b><br>
+                      <div *ngIf="newQuestion.answers.length == 0"><br>No Answers, add at least 2 (6 max)!<br></div>
+                       <ul> 
+                            <li *ngFor="let answer of newQuestion.answers">{{answer.text}} <span *ngIf="answer.correct == true" style="color:green;">(right answer)</span></li>
+                      </ul>
+  
+                      
+                  </div>
+                    
+                      <div class="col-md-6">
+                      <h4>Add new Answer</h4>
+                      <input style="color:#000000;"  type="textarea" [(ngModel)]="newanswer.text" >
+                      <button type="button" class="btn btn-primary btn-raised" (click)="addAnswer();">Add</button>
+                      <label><input type="checkbox" [(ngModel)]="newanswer.correct" >Right answer</label>
+                      <br><br>
+                    </div>
+                </div>
+                <div class="row">
+
+                <div class="col-md-6">
+                  Reference Link:
+                  <input style="color:#000000;" type="textarea" [(ngModel)]="newQuestion.link" >
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-danger btn-raised btn-sm" (click)="cancelNewQuestion();">Cancel</button>
+                    <button type="button" class="btn btn-success btn-raised btn-sm" (click)="submitNewQuestion();">Submit</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+</div>
+</div>
+

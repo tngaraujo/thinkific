@@ -1,0 +1,46 @@
+        <!--
+            <div id="container">
+          <div id="navi"><youtube-player height="400px" width="600px"[videoId]="id" (ready)="savePlayer($event)" (change)="onStateChange($event)"></youtube-player></div>
+            <div *ngIf="videooverlayOn" id="infoi" style="height:400px;width:600px;color:#ffffff; background-color:#000000;opacity:0.85;padding:20px;font-size:18;">
+                <span style="align:center;"><h3>Question</h3></span>
+
+            </div>
+        </div>
+        -->
+
+
+
+
+        <div id="container">
+          <div id="navi"><youtube-player height="400px" width="600px"[videoId]="id" (ready)="savePlayer($event)" (change)="onStateChange($event)"></youtube-player></div>
+            <div *ngIf="videooverlayOn" id="infoi" style="height:400px;width:600px;color:#ffffff; background-color:#000000;opacity:0.85;padding:20px;font-size:18;">
+                <h3>Question!</h3>
+                <div class="row">
+                  <div class="col-md-6">
+                      <h4>{{myvid.questions[this.activeQuestion].question}}</h4>
+                      
+                      <b>Answer Options</b><br>
+                    <button *ngFor="let answer of myvid.questions[activeQuestion].answers" type="button" class="btn btn-success btn-raised" (click)="answerQuestion(answer.text);">
+                        {{answer.text}}
+                    </button>
+                      
+                  </div>
+
+                  <div class="col-md-6" *ngIf="questionStatus==1">
+                      <h3>Correct Answer! :)</h3>
+                      <button type="button" class="btn btn-success btn-raised" (click)="continueVideo();">Continue</button>
+                  </div>
+                  
+                  <div class="col-md-6" *ngIf="questionStatus==2">
+                      <h3>Wrong Answer :(</h3>
+                        Follow this link to learn more:<br><br>
+                        <b><a href="{{this.myvid.questions[activeQuestion].link}}" target="_blank" style="word-wrap:break-word">{{this.myvid.questions[activeQuestion].link}}</a></b><br><br>
+                      <button type="button" class="btn btn-success btn-raised" (click)="continueVideo();">Continue</button>
+                  </div>
+
+                </div>
+
+
+
+            </div>
+        </div>

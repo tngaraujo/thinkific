@@ -1,0 +1,87 @@
+<div style="padding:20px">
+  
+    <button type="button" class="btn btn-primary btn-raised" routerLink="/newvideo" routerLinkActive="active">Add new Video</button>
+
+
+  <h2>Available Videos:</h2>
+
+          <p *ngIf="videolist.length == 0 "><br>No videos yet, click "Add new Video" to add the first one.<br></p>
+
+<!--
+<div class ="container-fluid">
+  <div class ="row">
+    <div class ="col-md-6 col-sm-6">
+        First Div
+    </div>
+    <div class ="col-md-6 col-sm-6">
+        Second Div
+     </div>
+  </div>
+</div>
+-->
+
+<div class="col-md-6" *ngFor="let video of videolist">
+<div class="panel panel-primary" >
+    <div class="panel-heading panel-primary"><b>Video</b>  {{video.title}}</div>
+  <div class="panel-body">
+      <div class="row">
+    <div class="col-md-6"><img src="{{video.thumbnail}}" width=120 height=90></div>
+    <div class="col-md-6">{{video.description.substring(0, 100)}}...</div>
+    </div>
+                    <br><b>Questions:</b> {{video.questions.length}}<br>
+                     <ul> 
+                          <li *ngFor="let question of video.questions">{{question.question}} at {{question.time | number : '1.2-2'}} seconds</li>
+                    </ul>
+                    <br><br>
+                    
+                        <div class="btn-toolbar">
+                            <!--
+                            <button type="button" class="btn btn-success btn-raised" (click)="removeAnswer();">Edit</button>
+                            <button type="button" class="btn btn-danger btn-raised" (click)="removeAnswer();">Remove</button>
+                            -->
+                            <button type="button" class="btn btn-success btn-raised" (click)="viewVideo(video.youtubeid);">View Video as Student</button>
+                            <button type="button" class="btn btn-primary btn-raised" data-toggle="modal" data-target="#myModal" (click)="getHTMLCode(video.youtubeid);">Get HTML Code</button>
+                            </div>
+                    </div>
+            </div>
+<!--
+                    <div class="well" *ngFor="let video of videolist"><b>Video</b>  Titulo do video
+                    <br><b>Questions</b> 6 <br><br>
+                        <div class="btn-toolbar">
+                            <button type="button" class="btn btn-success btn-raised" (click)="removeAnswer();">Edit</button>
+                            <button type="button" class="btn btn-danger btn-raised" (click)="removeAnswer();">Remove</button>
+                            <button type="button" class="btn btn-primary btn-raised" (click)="removeAnswer();">Get HTML Code</button>
+                            </div>
+                    </div>
+-->
+
+
+
+    
+</div>
+
+</div>
+
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">HTML Code to Embed the Video</h4>
+      </div>
+      <div class="modal-body">
+        <p>{{htmlcode}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
