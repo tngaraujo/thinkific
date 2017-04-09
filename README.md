@@ -23,6 +23,10 @@ The following requirements were met:
 
 7. The interactive video link can be embedded into another page using HTML and a simple
 
+![thinkific1](https://cloud.githubusercontent.com/assets/17129220/24840040/3c5b7664-1d3c-11e7-9023-3fb233c534db.jpg)
+![thinkific2](https://cloud.githubusercontent.com/assets/17129220/24840041/3c623738-1d3c-11e7-9135-060e280496d0.jpg)
+![thinkific3](https://cloud.githubusercontent.com/assets/17129220/24840042/3c62afd8-1d3c-11e7-887b-7316978f156f.jpg)
+
 ## Technology used
 Angular2, Express, NodeJS, SQLite3
 
